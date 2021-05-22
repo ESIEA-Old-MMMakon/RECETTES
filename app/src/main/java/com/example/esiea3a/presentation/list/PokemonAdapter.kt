@@ -1,5 +1,10 @@
 package com.example.esiea3a.presentation.list
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.esiea3a.R
 
 class PokemonAdapter(private val dataSet: Array<String>) :
     RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
@@ -13,7 +18,7 @@ class PokemonAdapter(private val dataSet: Array<String>) :
 
         init {
             // Define click listener for the ViewHolder's View.
-            textView = view.findViewById(R.id.textView)
+            textView = view.findViewById(R.id.pokemon_name)
         }
     }
 
@@ -21,7 +26,7 @@ class PokemonAdapter(private val dataSet: Array<String>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.text_row_item, viewGroup, false)
+            .inflate(R.layout.pokemon_item, viewGroup, false)
 
         return ViewHolder(view)
     }
