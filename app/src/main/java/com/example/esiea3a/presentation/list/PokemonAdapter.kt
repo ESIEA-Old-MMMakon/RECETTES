@@ -1,7 +1,8 @@
-package com.example.esiea3a
+package com.example.esiea3a.presentation.list
+import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(private val dataSet: Array<String>) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class PokemonAdapter(private val dataSet: Array<String>) :
+    RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
     /**
      * Provide a reference to the type of views that you are using
@@ -24,9 +25,8 @@ class CustomAdapter(private val dataSet: Array<String>) :
 
         return ViewHolder(view)
     }
-
     // Replace the contents of a view (invoked by the layout manager)
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: PokemonAdapter.ViewHolder, position: Int) {
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
@@ -35,5 +35,4 @@ class CustomAdapter(private val dataSet: Array<String>) :
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
-
 }
