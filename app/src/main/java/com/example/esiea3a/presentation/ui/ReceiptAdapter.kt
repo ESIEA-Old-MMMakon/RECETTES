@@ -1,10 +1,11 @@
-package com.example.esiea3a.presentation.data
+package com.example.esiea3a.presentation.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3a.R
+import com.example.esiea3a.presentation.data.Receipt
 
 class ReceiptAdapter(private var dataSet: List<Receipt>) :
     RecyclerView.Adapter<ReceiptAdapter.ViewHolder>() {
@@ -38,7 +39,7 @@ class ReceiptAdapter(private var dataSet: List<Receipt>) :
         return ViewHolder(view)
     }
     // Replace the contents of a view (invoked by the layout manager)
-    override fun onBindViewHolder(viewHolder: ReceiptAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
