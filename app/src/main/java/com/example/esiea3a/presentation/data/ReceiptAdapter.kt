@@ -1,4 +1,4 @@
-package com.example.esiea3a.presentation.list
+package com.example.esiea3a.presentation.data
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

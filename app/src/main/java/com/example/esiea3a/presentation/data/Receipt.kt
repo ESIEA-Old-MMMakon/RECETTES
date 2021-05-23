@@ -1,4 +1,4 @@
-package com.example.esiea3a.presentation.list
+package com.example.esiea3a.presentation.data
 
 data class Receipt (
     val id : Int,
