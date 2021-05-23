@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.esiea3a.R
 import com.example.esiea3a.presentation.data.Receipt
 import com.example.esiea3a.presentation.ui.ReceiptAdapter
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -42,10 +45,21 @@ class ReceiptListFragment : Fragment() {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
         val receiptApi:ReceiptApi = retrofit.create(ReceiptApi::class.java)
 
-        receiptApi.get
+        receiptApi.fetchAllReceipts().enqueue(object: Callback<ReceiptResponse> {
+            override fun onFailure(call: Call<ReceiptResponse>, t: Throwable){
+                //TODO("not implemented")
+            }
+            override fun onResponse(call: Call<ReceiptResponse>, response: Response<ReceiptResponse>){
+                if(response.isSuccessful && response.body() !=null){
+                    val receiptResponse: ReceiptResponse = response.body()!!
+                    adapter.updateList(receiptResponse.result)
+                }
+            }
+        })
 
         val bookList: ArrayList<Receipt> = arrayListOf<Receipt>().apply {
             add(Receipt(1, title = "pistache", description = "faites",url=""))
