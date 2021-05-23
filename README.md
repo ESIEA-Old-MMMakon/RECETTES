@@ -1,7 +1,7 @@
-# ESIEA3A_MANYIMv1
+# RECETTES
 
 # DESCRIPTION
-ESIEA3A_MANYIMv1 est une application de cuisine qui affiche les differents mets en fonction des pays du monde
+RECETTES est une application de cuisine qui affiche les differents mets en fonction des pays du monde
 # API
 
 # COMMENT SE PRESENTE L'APPLICATION
