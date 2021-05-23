@@ -1,4 +1,4 @@
-package com.example.esiea3a
+package com.example.esiea3a.presentation.ui
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -6,6 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.esiea3a.R
 
 class MainActivity : AppCompatActivity() {
 
